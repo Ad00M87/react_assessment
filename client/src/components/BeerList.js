@@ -1,23 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, Image, Header } from 'semantic-ui-react';
-import { getBeers } from '../actions/beers';
+import {
+  Container,
+  Header,
+  Card,
+} from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 class BeerList extends Component {
-
-  componentDidMount() {
-    this.props.dispatch(getBeers());
-  }
 
   beers = () => {
     const { beers } = this.props;
 
     return beers.map( beer => {
       return(
-        <Card>
+        <Card key={beer.id}>
           {/*TODO need to work out an image system for beers*/}
           <Card.Content>
-            <Card.Header>{beer.name}</Card.Header>
+            <Card.Header><Link to={`/api/all_beers/${beer.id}`}>{beer.name}</Link></Card.Header>
             <Card.Description>
               {beer.description}
             </Card.Description>
@@ -33,12 +33,12 @@ class BeerList extends Component {
 
   render() {
     return(
-      <div>
-      <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Beers</Header>
-      <Card.Group itemsPerRow={1}>
-        { this.beers() }
-      </Card.Group>
-      </div>
+      <Container>
+        <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Beers</Header>
+        <Card.Group itemsPerRow={3}>
+          { this.beers() }
+        </Card.Group>
+      </Container>
     )
   }
 

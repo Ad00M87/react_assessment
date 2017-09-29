@@ -15,8 +15,11 @@ class NavBar extends Component {
           <Link to='/'>
             <Menu.Item name='home' active={this.activeItem('/')} />
           </Link>
-          <Link to='/index'>
-            <Menu.Item name='Beers and Breweries' active={this.activeItem('/index')} />
+          <Link to='/api/all_beers'>
+            <Menu.Item name='Beers' active={this.activeItem('/api/all_beers')} />
+          </Link>
+          <Link to='/api/all_breweries'>
+            <Menu.Item name='Breweries' active={this.activeItem('/api/all_breweries')} />
           </Link>
           <Menu.Menu position='right'>
             <Link to='/'>

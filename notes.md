@@ -5,3 +5,6 @@
   Finally figured out how to access the beers...that was a doosy.
   Finished part 1 except for beer pictures (2:25PM)
 2:28PM Break Start
+2:49PM Break End
+  Finished pard 3 will still need additional formatting (5PM)
+5PM Break Start

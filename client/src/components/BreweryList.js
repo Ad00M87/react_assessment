@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, Image, Header } from 'semantic-ui-react';
-import { getBreweries } from '../actions/breweries';
+import { Card, Image, Header, Container } from 'semantic-ui-react';
 import Default from '../images/Default.png'
+import { Link } from 'react-router-dom';
 
 class BreweryList extends Component {
-
-  componentDidMount() {
-    this.props.dispatch(getBreweries());
-  }
 
   breweries = () => {
     const { breweries } = this.props;
@@ -16,10 +12,10 @@ class BreweryList extends Component {
     return breweries.map( brewery => {
       if (brewery.hasOwnProperty('images'))
         return(
-          <Card>
+          <Card key={brewery.id}>
             <Image src={brewery.images.square_medium} />
             <Card.Content>
-              <Card.Header>{brewery.name}</Card.Header>
+              <Card.Header><Link to={`/api/all_breweries/${brewery.id}`}>{brewery.name}</Link></Card.Header>
               <Card.Description>
                 {brewery.description}
               </Card.Description>
@@ -49,12 +45,12 @@ class BreweryList extends Component {
 
   render() {
     return(
-      <div>
-      <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Breweries</Header>
-      <Card.Group itemsPerRow={1}>
-        { this.breweries() }
-      </Card.Group>
-      </div>
+      <Container>
+        <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Breweries</Header>
+        <Card.Group itemsPerRow={3}>
+          { this.breweries() }
+        </Card.Group>
+      </Container>
     )
   }
 

@@ -1,22 +1,26 @@
-import React from 'react';
-import { Container, Grid, Divider } from 'semantic-ui-react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Route } from 'react-router-dom';
+import { Segment } from 'semantic-ui-react';
 import BeerList from './BeerList';
-import BreweryList from './BreweryList';
+import Beer from './Beer';
+import { getBeers } from '../actions/beers';
 
-const BeersHome = () => (
-  <Container>
-    <Divider hidden />
-    <Grid columns={2}>
-      <Grid.Column width={8}>
-        <BeerList />
-      </Grid.Column>
-      <Divider vertical />
-      <Grid.Column width={8}>
-        <BreweryList />
-      </Grid.Column>
-    </Grid>
-  </Container>
 
-)
+class BeersHome extends Component {
 
-export default BeersHome;
+  componentDidMount() {
+    this.props.dispatch(getBeers())
+  }
+
+  render() {
+    return(
+      <Segment>
+        <Route exact path='/api/all_beers' component={BeerList} />
+        <Route exact path='/api/all_beers/:id' component={Beer} />
+      </Segment>
+    )
+  }
+}
+
+export default connect()(BeersHome);
