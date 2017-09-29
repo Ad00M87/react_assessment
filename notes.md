@@ -8,3 +8,6 @@
 2:49PM Break End
   Finished pard 3 will still need additional formatting (5PM)
 5PM Break Start
+5:05PM Break End
+  Will_Paginate is extremely confusing which most likely means it is easy.
+  
