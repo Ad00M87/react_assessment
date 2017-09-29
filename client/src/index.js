@@ -8,6 +8,7 @@ import store from './store';
 import 'semantic-ui-css/semantic.min.css';
 import { injectGlobal } from 'styled-components';
 
+// eslint-disable-next-line
 injectGlobal`
   html, body {
     background-color: black;
