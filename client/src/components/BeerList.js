@@ -18,7 +18,7 @@ class BeerList extends Component {
           {/*TODO need to work out an image system for beers*/}
           <Card.Content>
             <Card.Header><Link to={`/api/all_beers/${beer.id}`}>{beer.name}</Link></Card.Header>
-            <Card.Description>
+            <Card.Description style={styles.scroller}>
               {beer.description}
             </Card.Description>
             <Card.Content extra>
@@ -42,6 +42,10 @@ class BeerList extends Component {
     )
   }
 
+}
+
+const styles = {
+  scroller: { maxHeight: '200px', overflowY: 'scroll' }
 }
 
 const mapStateToProps = (state) => {

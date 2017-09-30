@@ -15,12 +15,18 @@ class BeersHome extends Component {
 
   render() {
     return(
-      <Segment>
+      <Segment style={styles.background}>
         <Route exact path='/api/all_beers' component={BeerList} />
         <Route exact path='/api/all_beers/:id' component={Beer} />
       </Segment>
     )
   }
+}
+
+const styles = {
+  background: {
+    backgroundColor: 'black'
+  },
 }
 
 export default connect()(BeersHome);

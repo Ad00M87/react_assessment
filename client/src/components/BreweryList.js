@@ -16,7 +16,7 @@ class BreweryList extends Component {
             <Image src={brewery.images.square_medium} />
             <Card.Content>
               <Card.Header><Link to={`/api/all_breweries/${brewery.id}`}>{brewery.name}</Link></Card.Header>
-              <Card.Description>
+              <Card.Description style={styles.scroller}>
                 {brewery.description}
               </Card.Description>
               <Card.Content extra>
@@ -31,7 +31,7 @@ class BreweryList extends Component {
             <Image src={Default} />
             <Card.Content>
               <Card.Header>{brewery.name}</Card.Header>
-              <Card.Description>
+              <Card.Description style={styles.scroller}>
                 {brewery.description}
               </Card.Description>
               <Card.Content extra>
@@ -54,6 +54,10 @@ class BreweryList extends Component {
     )
   }
 
+}
+
+const styles = {
+  scroller: { maxHeight: '200px', overflowY: 'scroll' }
 }
 
 const mapStateToProps = (state) => {

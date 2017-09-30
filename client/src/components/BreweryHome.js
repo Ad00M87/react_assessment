@@ -15,12 +15,18 @@ class BreweryHome extends Component {
 
   render() {
     return(
-      <Segment>
+      <Segment style={styles.background}>
         <Route exact path='/api/all_breweries' component={BreweryList} />
         <Route exact path='/api/all_breweries/:id' component={Brewery} />
       </Segment>
     )
   }
+}
+
+const styles = {
+  background: {
+    backgroundColor: 'black'
+  },
 }
 
 export default connect()(BreweryHome);
