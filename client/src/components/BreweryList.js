@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Card, Image, Header, Container } from 'semantic-ui-react';
-import Default from '../images/Default.png'
+import Default from '../images/Default.png';
 import { Link } from 'react-router-dom';
 
 class BreweryList extends Component {
@@ -43,11 +43,12 @@ class BreweryList extends Component {
     })
   }
 
+
   render() {
     return(
       <Container>
         <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Breweries</Header>
-        <Card.Group itemsPerRow={3}>
+        <Card.Group itemsPerRow={2}>
           { this.breweries() }
         </Card.Group>
       </Container>

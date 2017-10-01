@@ -10,7 +10,7 @@ import { getBreweries } from '../actions/breweries';
 class BreweryHome extends Component {
 
   componentDidMount() {
-    this.props.dispatch(getBreweries())
+    this.props.dispatch(getBreweries(10))
   }
 
   render() {
