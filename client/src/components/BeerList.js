@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {
-  Container,
-  Header,
-  Card,
-} from 'semantic-ui-react';
+import { Container, Header, Card, Button, Grid } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
+import { getBeers } from '../actions/beers';
 
 class BeerList extends Component {
+  state = { num: 10 }
 
   beers = () => {
     const { beers } = this.props;
@@ -31,15 +29,37 @@ class BeerList extends Component {
     })
   }
 
+  loadMore = (num) => {
+    this.props.dispatch(getBeers(num))
+    this.setState({ num })
+  }
+
   render() {
-    return(
-      <Container>
-        <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Beers</Header>
-        <Card.Group itemsPerRow={3}>
-          { this.beers() }
-        </Card.Group>
-      </Container>
-    )
+    const { num } = this.state;
+    if (num === 50) {
+      return(
+        <Container>
+          <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Beers</Header>
+          <Card.Group itemsPerRow={2}>
+            { this.beers() }
+          </Card.Group>
+        </Container>
+      )
+    } else {
+      return(
+        <Container>
+          <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Beers</Header>
+          <Card.Group itemsPerRow={2}>
+            { this.beers() }
+          </Card.Group>
+          <Grid>
+            <Grid.Row centered>
+              <Button onClick={ () => this.loadMore(num + 10)}>Load More</Button>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      )
+    }
   }
 
 }
