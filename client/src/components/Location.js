@@ -4,18 +4,19 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Default from '../images/Default.png'
 
-const Brewery = ({ brewery = {} }) => {
-  if (brewery.hasOwnProperty('images')) {
+const Location = ({ location = {} }) => {
+  if (location.hasOwnProperty('brewery')) {
     return(
       <Container style={styles.background}>
-        <Header as='h2' textAlign='center'>{brewery.name}</Header>
+        <Header as='h2' textAlign='center'>{location.name}</Header>
         <Grid columns={2}>
           <Grid.Column width={6}>
-            <Image src={brewery.images.square_medium} />
-            <h4>{brewery.email}</h4>
+            <Image src={location.brewery.images.square_medium} />
+            <h4>{location.website}</h4>
           </Grid.Column>
           <Grid.Column width={10}>
-            <p>{brewery.description }</p>
+            <h3>{location.street_address}</h3>
+            <h3>{location.locality}, {location.region} {location.postal_code}</h3>
           </Grid.Column>
         </Grid>
       </Container>
@@ -23,14 +24,15 @@ const Brewery = ({ brewery = {} }) => {
   } else {
     return (
       <Container style={styles.background}>
-        <Header as='h2' textAlign='center'>{brewery.name}</Header>
+        <Header as='h2' textAlign='center'>{location.name}</Header>
         <Grid columns={2}>
           <Grid.Column width={6}>
             <Image src={Default} />
-            <h4>{brewery.email}</h4>
+            <h4>{location.website}</h4>
           </Grid.Column>
           <Grid.Column width={10}>
-            <p>{brewery.description}</p>
+            <h3>{location.street_address}</h3>
+            <h3>{location.locality}, {location.region} {location.postal_code}</h3>
           </Grid.Column>
         </Grid>
       </Container>
@@ -47,7 +49,7 @@ const styles = {
 }
 
 const mapStateToProps = (state, props) => {
-  return { brewery: state.breweries.find( b => b.id === props.match.params.id )}
+  return { location: state.locations.find( l => l.id === props.match.params.id )}
 }
 
-export default connect(mapStateToProps)(Brewery);
+export default connect(mapStateToProps)(Location);

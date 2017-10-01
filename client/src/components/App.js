@@ -5,6 +5,8 @@ import Flash from './Flash';
 import Home from './Home';
 import BeersHome from './BeersHome';
 import BreweryHome from './BreweryHome';
+import LocationHome from './LocationHome';
+import GlasswareHome from './GlasswareHome';
 import { Switch, Route } from 'react-router-dom';
 import { Segment } from 'semantic-ui-react';
 
@@ -18,6 +20,8 @@ class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/api/all_beers' component={BeersHome} />
           <Route path='/api/all_breweries' component={BreweryHome} />
+          <Route path='/api/all_locations' component={LocationHome} />
+          <Route path='/api/all_glassware' component={GlasswareHome} />
           <Route component={NoMatch} />
         </Switch>
       </Segment>

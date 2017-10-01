@@ -32,7 +32,7 @@ class BreweryList extends Component {
           <Card>
             <Image src={Default} />
             <Card.Content>
-              <Card.Header>{brewery.name}</Card.Header>
+              <Card.Header><Link to={`/api/all_breweries/${brewery.id}`}>{brewery.name}</Link></Card.Header>
               <Card.Description style={styles.scroller}>
                 {brewery.description}
               </Card.Description>

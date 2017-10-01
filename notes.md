@@ -26,3 +26,12 @@
 10/01/17 -
 6:40AM Start Coding
 7:20AM Stop Coding
+8:00AM Start Coding
+  Finally found a way to get pagination to work with my redux setup
+    (It is a mix bewteen links and infinite scroll).
+  Added rating images to the beers, that is done randomly, so every time
+    a new batch of beers is shown all ratings change.
+12:00PM Stop Coding
+1:40PM Start Coding
+  Adding glassware and locations
+  
