@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Card, Image, Header, Container } from 'semantic-ui-react';
+import { Card, Image, Header, Container, Button, Grid } from 'semantic-ui-react';
 import Default from '../images/Default.png';
 import { Link } from 'react-router-dom';
+import { getBreweries } from '../actions/breweries';
 
 class BreweryList extends Component {
+  state = { num: 10 }
 
   breweries = () => {
     const { breweries } = this.props;
@@ -43,16 +45,37 @@ class BreweryList extends Component {
     })
   }
 
+  loadMore = (num) => {
+    this.props.dispatch(getBreweries(num))
+    this.setState({ num })
+  }
 
   render() {
-    return(
-      <Container>
-        <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Breweries</Header>
-        <Card.Group itemsPerRow={2}>
-          { this.breweries() }
-        </Card.Group>
-      </Container>
-    )
+    const { num } = this.state;
+    if (num === 50) {
+      return(
+        <Container>
+          <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Breweries</Header>
+          <Card.Group itemsPerRow={2}>
+            { this.breweries() }
+          </Card.Group>
+        </Container>
+      )
+    } else {
+      return(
+        <Container>
+          <Header as='h3' textAlign='center' style={{ color: 'white' }}>Featured Breweries</Header>
+          <Card.Group itemsPerRow={2}>
+            { this.breweries() }
+          </Card.Group>
+          <Grid>
+            <Grid.Row columns={5} centered>
+              <Button onClick={() => this.loadMore(num + 10)}>Load More</Button>
+            </Grid.Row>
+          </Grid>
+        </Container>
+      )
+    }
   }
 
 }
