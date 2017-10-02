@@ -10,12 +10,16 @@ const Location = ({ location = {} }) => {
         <Header as='h2' textAlign='center'>{location.name}</Header>
         <Grid columns={2}>
           <Grid.Column width={6}>
-            <Image src={location.brewery.images.square_medium} />
+            { location.brewery.images ?
+            <Image src={location.brewery.images.square_medium} /> :
+            <Image src={Default} />
+            }
             <h4>{location.website}</h4>
           </Grid.Column>
           <Grid.Column width={10}>
             <h3>{location.street_address}</h3>
             <h3>{location.locality}, {location.region} {location.postal_code}</h3>
+            <h3>{location.phone}</h3>
           </Grid.Column>
         </Grid>
       </Container>
@@ -32,6 +36,7 @@ const Location = ({ location = {} }) => {
           <Grid.Column width={10}>
             <h3>{location.street_address}</h3>
             <h3>{location.locality}, {location.region} {location.postal_code}</h3>
+            <h3>{location.phone}</h3>
           </Grid.Column>
         </Grid>
       </Container>

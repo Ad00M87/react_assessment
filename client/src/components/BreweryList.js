@@ -19,11 +19,11 @@ class BreweryList extends Component {
             <Card.Content>
               <Card.Header><Link to={`/api/all_breweries/${brewery.id}`}>{brewery.name}</Link></Card.Header>
               <Card.Description style={styles.scroller}>
-                {brewery.description}
+                {brewery.description ? <p>{brewery.description}</p> : <h3>No Description was provided.</h3>}
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              {brewery.website}
+              {brewery.website ? <h3>{brewery.website}</h3> : <h3>No Email provided</h3>}
             </Card.Content>
           </Card>
         )
@@ -34,11 +34,11 @@ class BreweryList extends Component {
             <Card.Content>
               <Card.Header><Link to={`/api/all_breweries/${brewery.id}`}>{brewery.name}</Link></Card.Header>
               <Card.Description style={styles.scroller}>
-                {brewery.description}
+                {brewery.description ? <p>{brewery.description}</p> : <h3>No Description was provided.</h3>}
               </Card.Description>
             </Card.Content>
             <Card.Content extra>
-              {brewery.website}
+              {brewery.website ? <h3>{brewery.website}</h3> : <h3>No Email provided</h3>}
             </Card.Content>
           </Card>
         )

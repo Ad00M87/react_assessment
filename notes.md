@@ -39,3 +39,12 @@
   Added a search all function.
   Some styling
 10:30PM Stop Coding
+
+10/02/17 -
+7:00AM Start Coding
+  Fixing bugs and displays
+7:20PM Stop Coding
+
+I wish I had more time to work through some styling and bugs, but everything is
+functional and hopefully won't breakdown. This was a good assignment to get the
+feel of Postman, it was a mystery before this assignment.

@@ -12,10 +12,10 @@ const Brewery = ({ brewery = {} }) => {
         <Grid columns={2}>
           <Grid.Column width={6}>
             <Image src={brewery.images.square_medium} />
-            <h4>{brewery.email}</h4>
+            {brewery.website ? <h3>{brewery.website}</h3> : <h3>No Email provided</h3>}
           </Grid.Column>
           <Grid.Column width={10}>
-            <p>{brewery.description }</p>
+            {brewery.description ? <p>{brewery.description}</p> : <h3>No Description was provided.</h3>}
           </Grid.Column>
         </Grid>
       </Container>
@@ -27,10 +27,10 @@ const Brewery = ({ brewery = {} }) => {
         <Grid columns={2}>
           <Grid.Column width={6}>
             <Image src={Default} />
-            <h4>{brewery.email}</h4>
+            {brewery.website ? <h3>{brewery.website}</h3> : <h3>No Email provided</h3>}
           </Grid.Column>
           <Grid.Column width={10}>
-            <p>{brewery.description}</p>
+            {brewery.description ? <p>{brewery.description}</p> : <h3>No Description was provided.</h3>}
           </Grid.Column>
         </Grid>
       </Container>
