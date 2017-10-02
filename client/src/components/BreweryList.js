@@ -21,9 +21,9 @@ class BreweryList extends Component {
               <Card.Description style={styles.scroller}>
                 {brewery.description}
               </Card.Description>
-              <Card.Content extra>
-                {brewery.website}
-              </Card.Content>
+            </Card.Content>
+            <Card.Content extra>
+              {brewery.website}
             </Card.Content>
           </Card>
         )
@@ -36,9 +36,9 @@ class BreweryList extends Component {
               <Card.Description style={styles.scroller}>
                 {brewery.description}
               </Card.Description>
-              <Card.Content extra>
-                {brewery.website}
-              </Card.Content>
+            </Card.Content>
+            <Card.Content extra>
+              {brewery.website}
             </Card.Content>
           </Card>
         )

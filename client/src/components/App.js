@@ -7,6 +7,7 @@ import BeersHome from './BeersHome';
 import BreweryHome from './BreweryHome';
 import LocationHome from './LocationHome';
 import GlasswareHome from './GlasswareHome';
+import SearchHome from './SearchHome';
 import { Switch, Route } from 'react-router-dom';
 import { Segment } from 'semantic-ui-react';
 
@@ -22,6 +23,7 @@ class App extends Component {
           <Route path='/api/all_breweries' component={BreweryHome} />
           <Route path='/api/all_locations' component={LocationHome} />
           <Route path='/api/all_glassware' component={GlasswareHome} />
+          <Route path='/api/search_all' component={SearchHome} />
           <Route component={NoMatch} />
         </Switch>
       </Segment>

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Card, Button, Grid, Image } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
+import { Container, Header, Card } from 'semantic-ui-react';
 
 class GlassList extends Component {
 

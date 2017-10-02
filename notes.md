@@ -33,5 +33,9 @@
     a new batch of beers is shown all ratings change.
 12:00PM Stop Coding
 1:40PM Start Coding
-  Adding glassware and locations
-  
+  Adding glassware and locations, some styling.
+2:40PM Stop Coding
+8:45PM Start Coding
+  Added a search all function.
+  Some styling
+10:30PM Stop Coding

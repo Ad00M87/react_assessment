@@ -42,11 +42,11 @@ class BeerList extends Component {
               <br />
               <h5>{beer.abv}% Alcohol</h5>
             </Card.Content>
-            <Card.Content extra>
-              <h3>RATING:</h3>
-              {this.getImage()}
-              <h4>(Out of 5 beers)</h4>
-            </Card.Content>
+          </Card.Content>
+          <Card.Content extra>
+            <h3>RATING:</h3>
+            {this.getImage()}
+            <h4>(Out of 5 beers)</h4>
           </Card.Content>
         </Card>
       )

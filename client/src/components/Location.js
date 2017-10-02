@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Image, Grid, Header } from 'semantic-ui-react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import Default from '../images/Default.png'
 
 const Location = ({ location = {} }) => {
